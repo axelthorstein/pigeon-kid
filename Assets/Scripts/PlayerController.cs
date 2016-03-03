@@ -4,8 +4,8 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
     public float maxSpeed = 3;
-    public float speed = 50f;
-    public float jumpPower = 150f;
+    public float speed = 400f;
+    public float jumpPower = 650f;
 
     public bool canDoubleJump;
     public bool grounded;
