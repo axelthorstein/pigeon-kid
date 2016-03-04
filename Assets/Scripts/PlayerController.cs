@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour {
     public float speed = 400f;
     public float jumpPower = 650f;
 
+    public Transform groundedEnd;
+
     public bool canDoubleJump;
     public bool grounded;
 
@@ -22,6 +24,9 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
+        Debug.DrawLine(this.transform.position, groundedEnd.position, Color.green);
+
+        grounded = Physics2D.Linecast(this.transform.position, groundedEnd.position, 1 << LayerMask.NameToLayer("Ground"));
 
         anime.SetBool("Grounded", grounded);
         anime.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
